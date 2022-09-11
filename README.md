@@ -60,9 +60,9 @@ Principal organización del proyecto
 Ejecución
 ---------------
 Los principales notebooks del proyecto se encuentran en la carpeta notebooks.
-- [01_tfm_rlrecsys-env_InterestEvol-models.ipynb](notebooks\01_tfm_rlrecsys-env_InterestEvol-models.ipynb): Contiene el desarrollo de los modelos utilizando el entorno de Interest Evolution.
-- [02_tfm_rlrecsys-env_LTS-models.ipynb](notebooks\02_tfm_rlrecsys-env_LTS-models.ipynb): Contiene el desarrollo de los modelos utilizando el entorno de recsim de Long Term Satisfaction y una modificación del mismo.
-- [03_tfm_rlrecsys-models_offline.ipynb](notebooks\03_tfm_rlrecsys-models_offline.ipynb): Contiene el desarrollo de los modelos offline generados a partir del dataset creado con la DQL del primer notebook.
-- [04_tfm_rlrecsys-models_deploy.ipynb](notebooks\04_tfm_rlrecsys-models_deploy.ipynb): Ejemplo de puesta en producción de un modelo offline.
+- [01_tfm_rlrecsys-env_InterestEvol-models.ipynb](notebooks/01_tfm_rlrecsys-env_InterestEvol-models.ipynb): Contiene el desarrollo de los modelos utilizando el entorno de Interest Evolution.
+- [02_tfm_rlrecsys-env_LTS-models.ipynb](notebooks/02_tfm_rlrecsys-env_LTS-models.ipynb): Contiene el desarrollo de los modelos utilizando el entorno de recsim de Long Term Satisfaction y una modificación del mismo.
+- [03_tfm_rlrecsys-models_offline.ipynb](notebooks/03_tfm_rlrecsys-models_offline.ipynb): Contiene el desarrollo de los modelos offline generados a partir del dataset creado con la DQL del primer notebook.
+- [04_tfm_rlrecsys-models_deploy.ipynb](notebooks/04_tfm_rlrecsys-models_deploy.ipynb): Ejemplo de puesta en producción de un modelo offline.
 
 En todos los notebooks, las funciones que se van generando en el mismo son guardadas en scripts en la carpeta src/ por motivos de buenas prácticas.
