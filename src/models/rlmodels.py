@@ -86,7 +86,6 @@ def run_one_single_episode(env,trainer,model="bandit", obs = None):
     return: None
     """
     
-    # Let's see what items our bandit recommends now that it has been trained and achieves good (>> random) rewards.
     if obs is None:
         obs = env.reset()
 
@@ -94,25 +93,29 @@ def run_one_single_episode(env,trainer,model="bandit", obs = None):
     # Run a single episode.
     done = False
     while not done:
-        # Pass the single (unbatched) observation into the `compute_single_action` method of our Trainer.
-        # This is one way to perform inference on a learned policy.
+        # Pass the single observation into the `compute_single_action` method of our Trainer.
         action = trainer.compute_single_action(input_dict={"obs": obs})
         if model=="bandit":
             feat_value_of_action = obs["item"][action][0]
             max_choc_feat = obs["item"][np.argmax(obs["item"])][0]
+            min_choc_feat = obs["item"][np.argmin(obs["item"])][0]
         
         elif model=="slateq":   
             feat_value_of_action = obs["doc"][str(action[0])][0]
             max_feat_action = np.argmax([value for _, value in obs["doc"].items()])
             max_choc_feat = obs['doc'][str(max_feat_action)][0] 
+            min_feat_action = np.argmin([value for _, value in obs["doc"].items()])
+            min_choc_feat = obs['doc'][str(min_feat_action)][0] 
         else:
             raise ValueError("model must be 'bandit' or 'slateq'")
 
         # Print out the picked document's feature value and compare that to the highest possible feature value.
-        print(f"action's feature value={feat_value_of_action}; max-choc-feature={max_choc_feat}; ")
+        print(f"action's feature value={feat_value_of_action}; max-feature={max_choc_feat}; min-feature={min_choc_feat}")
 
         # Apply the computed action in the environment and continue.
         obs, r, done, _ = env.step(action)
+
+
 
 
 
